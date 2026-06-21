@@ -1,106 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo Web</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#f4f6f9;
+        }
+
+        header{
+            background: linear-gradient(to right,#0d6efd,#0a58ca);
+            color:white;
+            padding:40px;
+            text-align:center;
+        }
+
+        section{
+            padding:40px 0;
+        }
+
+        .card{
+            box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:scale(1.05);
+        }
+
+        aside{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 2px 5px rgba(0,0,0,0.2);
+            margin-top:20px;
+        }
+
+        footer{
+            background:#212529;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        iframe{
+            width:100%;
+        }
+
+        @media (max-width:768px){
+            header{
+                padding:20px;
+            }
+
+            h1{
+                font-size:28px;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- MENÚ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            Desarrollo Web
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#quienes-somos">
+                        Quiénes Somos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">
+                        Servicios
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+    <!-- HEADER -->
     <header>
         <h1>Desarrollo Web</h1>
+        <p>Diseñamos soluciones digitales modernas y funcionales.</p>
+        <a href="#contacto" class="btn btn-light mt-3">
+            Contáctanos
+        </a>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#quienes-somos">Quiénes Somos</a></li>
-            <li><a href="#servicios">Servicios o Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <main class="container">
 
-    <main>
-
-        <section id="inicio">
-            <h2>Inicio</h2>
-            <p>
-                Bienvenido a nuestro proyecto de desarrollo web. Este sitio tiene como objetivo
-                presentar información sobre nuestros servicios digitales y demostrar el uso de
-                herramientas básicas de HTML5 para la creación de páginas web modernas.
-            </p>
-        </section>
-
-        <section id="quienes-somos">
-            <h2>Quiénes Somos</h2>
-
-            <article>
-                <p>
-                    Somos un proyecto orientado al aprendizaje y desarrollo de aplicaciones web.
-                    Nuestro objetivo es diseñar soluciones digitales que permitan mejorar la
-                    comunicación, organización y acceso a la información mediante páginas web
-                    modernas y funcionales. Este proyecto busca aplicar conocimientos de
-                    programación web utilizando tecnologías fundamentales como HTML5, permitiendo
-                    crear sitios estructurados y fáciles de navegar. Además, promovemos el uso de
-                    herramientas tecnológicas para apoyar a emprendedores, estudiantes y pequeñas
-                    empresas que necesitan presencia en internet. A través de este proyecto se
-                    fortalecen habilidades relacionadas con el diseño de interfaces, organización
-                    de contenidos y desarrollo de soluciones digitales que respondan a las
-                    necesidades actuales de los usuarios.
+        <!-- INICIO -->
+        <section id="inicio" class="container text-center p-5">
+            <div class="text-center">
+                <h2>Inicio</h2>
+                <p class="mt-3">
+                    Bienvenido a nuestro proyecto de desarrollo web.
+                    Nuestro objetivo es presentar servicios digitales y
+                    demostrar el uso de herramientas HTML5, CSS3 y
+                    Bootstrap para la creación de páginas modernas.
                 </p>
 
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
-                     alt="Desarrollo Web" width="500">
-            </article>
+                <a href="#servicios" class="btn btn-primary">
+    Ver Servicios
+</a>
+            </div>
         </section>
 
-        <section id="servicios">
-            <h2>Servicios o Productos</h2>
+        <!-- QUIÉNES SOMOS -->
+        <section id="quienes-somos" class="container py-5">
 
-            <ul>
-                <li>Diseño de páginas web</li>
-                <li>Desarrollo de aplicaciones web</li>
-                <li>Mantenimiento de sitios web</li>
-                <li>Optimización de contenido digital</li>
-                <li>Asesoría tecnológica</li>
-            </ul>
+<h2 class="text-center mb-5">
+    Quiénes Somos
+</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<p>
+Somos un proyecto orientado al aprendizaje y desarrollo
+de aplicaciones web. Nuestro objetivo es diseñar
+soluciones digitales modernas y funcionales.
+</p>
+
+</div>
+
+<div class="col-md-6">
+
+<img
+src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+class="img-fluid rounded shadow">
+
+</div>
+
+</div>
+
+</section>
+
+                <div class="col-md-6 text-center">
+                    <img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600"
+                    class="img-fluid rounded shadow"
+                    alt="Desarrollo Web">
+                </div>
+
+            </div>
         </section>
 
+        <!-- SERVICIOS -->
+        <section id="servicios" class="container py-5">
+
+<h2 class="text-center mb-5">
+Servicios o Productos
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card p-3 m-3">
+
+<h4>Diseño Web</h4>
+
+<p>
+Creación de páginas web modernas.
+</p>
+
+<button class="btn btn-primary">
+Más Información
+</button>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-3 m-3">
+
+<h4>Aplicaciones Web</h4>
+
+<p>
+Desarrollo de aplicaciones web.
+</p>
+
+<button class="btn btn-primary">
+Más Información
+</button>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card p-3 m-3">
+
+<h4>Asesoría Tecnológica</h4>
+
+<p>
+Soporte y mantenimiento.
+</p>
+
+<button class="btn btn-primary">
+Más Información
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+        <!-- CONTACTO -->
         <section id="contacto">
-            <h2>Contacto</h2>
 
-            <p>Correo: contacto@desarrolloweb.com</p>
-            <p>Teléfono: +593 999 999 999</p>
-            <p>Dirección: Guayaquil, Ecuador</p>
+            <h2 class="text-center mb-5">
+                Contacto
+            </h2>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <form>
+
+<div class="mb-3">
+<label>Nombre</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Correo</label>
+<input type="email" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Asunto</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Mensaje</label>
+<textarea class="form-control"></textarea>
+</div>
+
+<button class="btn btn-success">
+Enviar
+</button>
+
+</form>
+                </div>
+
+                <div class="col-md-6">
+
+                    <h4>Información</h4>
+
+                    <p>📧 contacto@desarrolloweb.com</p>
+                    <p>📞 +593 999 999 999</p>
+                    <p>📍 Guayaquil, Ecuador</p>
+
+                    <a href="#" class="btn btn-primary m-1">
+                        Facebook
+                    </a>
+
+                    <a href="#" class="btn btn-danger m-1">
+                        Instagram
+                    </a>
+
+                    <a href="#" class="btn btn-dark m-1">
+                        YouTube
+                    </a>
+
+                    <div class="mt-4">
+                        <iframe
+                        height="315"
+                        src="https://www.youtube.com/embed/vKi9XI3Ya7s"
+                        allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ASIDE -->
+        <aside>
+            <h3>Información Adicional</h3>
 
             <p>
-                Redes Sociales:
-                <a href="https://www.facebook.com" target="_blank">Facebook</a> |
-                <a href="https://www.instagram.com" target="_blank">Instagram</a> |
-                <a href="https://www.youtube.com" target="_blank">YouTube</a>
+                Promoción: Primera asesoría gratuita para nuevos clientes.
             </p>
 
-            <h3>Video Relacionado</h3>
-
-            <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/vKi9XI3Ya7s"
-                title="Video de Desarrollo Web"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
-        </section>
+            <p>
+                Horario de atención:
+                Lunes a Viernes de 08:00 a 17:00.
+            </p>
+        </aside>
 
     </main>
 
-    <aside>
-        <h2>Información Adicional</h2>
-        <p>Promoción: Primera asesoría gratuita para nuevos clientes.</p>
-        <p>Horario de atención: Lunes a Viernes de 08:00 a 17:00.</p>
-    </aside>
-
+    <!-- FOOTER -->
     <footer>
-        <p>Esther Sellan Barahona - Desarrollo de Aplicaciones Web - 2026</p>
+        Esther Sellan Barahona - Desarrollo de Aplicaciones Web - 2026
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
