@@ -150,3 +150,109 @@ footer {
         padding: 15px;
     }
 }
+
+
+/* ========================================= */
+/* MEJORAS VISUALES - SEMANA 8 */
+/* ========================================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(180deg,#f8f9fa,#eef3f8);
+}
+
+/* NAVBAR */
+
+.navbar{
+    transition:all .3s ease;
+}
+
+.navbar-brand{
+    font-weight:bold;
+    font-size:1.5rem;
+}
+
+.nav-link{
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#ffc107 !important;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0d6efd,#4f8dfd);
+}
+
+header .btn{
+    transition:.3s;
+}
+
+header .btn:hover{
+    transform:scale(1.05);
+}
+
+/* TARJETAS */
+
+.card{
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* FORMULARIOS */
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus{
+
+    box-shadow:0 0 15px rgba(13,110,253,.30);
+    border-color:#0d6efd;
+
+}
+
+/* BOTONES */
+
+.btn{
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* REGISTROS */
+
+.registro{
+    transition:.3s;
+}
+
+.registro:hover{
+    transform:scale(1.02);
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+}
+
+/* MODAL */
+
+.modal-content{
+    border-radius:15px;
+}
+
+/* SPINNER */
+
+#spinnerCarga{
+    backdrop-filter:blur(2px);
+}

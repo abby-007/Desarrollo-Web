@@ -73,7 +73,7 @@ function validarNombre() {
         return false;
     }
     nombre.classList.remove("is-invalid");
-    nombre.classList.add("is-valid");S
+    nombre.classList.add("is-valid");
     errorNombre.textContent = "";
     return true;
 }
@@ -148,7 +148,15 @@ formulario.addEventListener("submit", function (e) {
         };
 
         registros.push(registro);
-        mostrarRegistros();
+mostrarRegistros();
+
+// Mostrar modal Bootstrap
+const modalRegistro = new bootstrap.Modal(
+    document.getElementById("modalRegistro")
+);
+
+modalRegistro.show();
+
 
         mensajeGeneral.innerHTML = `
             <div class="alert alert-success alert-dismissible fade show" role="alert">
