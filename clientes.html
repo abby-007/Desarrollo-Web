@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+Clientes - Desarrollo Web
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+
+    <h2 class="text-center mb-5">
+        Módulo de Clientes
+    </h2>
+
+    <div class="table-responsive">
+
+        <table class="table table-striped table-hover">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Empresa</th>
+                    <th>Ciudad</th>
+                    <th>Estado</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>María Torres</td>
+                    <td>Innovatec</td>
+                    <td>Guayaquil</td>
+                    <td>
+                        <span class="badge bg-success">
+                            Activo
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Carlos Pérez</td>
+                    <td>Digital Plus</td>
+                    <td>Quito</td>
+                    <td>
+                        <span class="badge bg-success">
+                            Activo
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Lucía Andrade</td>
+                    <td>Web Solutions</td>
+                    <td>Cuenca</td>
+                    <td>
+                        <span class="badge bg-warning text-dark">
+                            Pendiente
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

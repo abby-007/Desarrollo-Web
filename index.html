@@ -1,145 +1,262 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto Integrador - Desarrollo Web</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+{% extends "base.html" %}
 
-<!-- ===================================== -->
-<!-- FUTURA PLANTILLA base.html - Menú -->
-<!-- ===================================== -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class="container">
-<a class="navbar-brand" href="#">Desarrollo Web</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="menu">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-<li class="nav-item"><a class="nav-link" href="#quienes">Quiénes Somos</a></li>
-<li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-<li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-</ul>
-</div>
-</div>
-</nav>
+{% block title %}
+Inicio - Desarrollo Web
+{% endblock %}
 
-<!-- ===================================== -->
-<!-- FUTURA PLANTILLA base.html - Encabezado -->
-<!-- ===================================== -->
-<header class="bg-primary text-white text-center py-5">
-<div class="container">
-<h1 class="display-4">Desarrollo Web</h1>
-<p class="lead">Diseñamos soluciones digitales modernas y funcionales para empresas y emprendedores.</p>
-<a href="#contacto" class="btn btn-light btn-lg mt-3">Contáctanos</a>
-</div>
-</header>
-
-<!-- ===================================== -->
-<!-- FUTURA PLANTILLA base.html - Contenido Principal -->
-<!-- ===================================== -->
-<main class="container">
+{% block content %}
 
 <section id="inicio" class="py-5 text-center">
-<h2>Bienvenido</h2>
-<p>Este proyecto integrador demuestra el uso de HTML5, CSS3, Bootstrap y JavaScript.</p>
+
+    <h2>Bienvenido</h2>
+
+    <p>
+        Este proyecto integrador demuestra el uso de HTML5,
+        CSS3, Bootstrap, JavaScript, Python y Flask.
+    </p>
+
 </section>
+
 
 <section id="quienes" class="py-5">
-<h2 class="text-center mb-5">Quiénes Somos</h2>
-<div class="row align-items-center">
-<div class="col-md-6">
-<p>Somos un equipo dedicado al desarrollo de aplicaciones web modernas.</p>
-<p>Esta estructura está preparada para migrar posteriormente a Flask mediante una plantilla base.</p>
-</div>
-<div class="col-md-6 text-center">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900" class="img-fluid rounded shadow" alt="Desarrollo Web">
-</div>
-</div>
+
+    <h2 class="text-center mb-5">
+        Quiénes Somos
+    </h2>
+
+    <div class="row align-items-center">
+
+        <div class="col-md-6">
+
+            <p>
+                Somos un equipo dedicado al desarrollo de
+                aplicaciones web modernas.
+            </p>
+
+            <p>
+                Nuestro proyecto integra tecnologías frontend
+                y backend para desarrollar soluciones web
+                funcionales y adaptables.
+            </p>
+
+        </div>
+
+        <div class="col-md-6 text-center">
+
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900"
+                class="img-fluid rounded shadow"
+                alt="Desarrollo Web">
+
+        </div>
+
+    </div>
+
 </section>
+
 
 <section id="servicios" class="py-5">
-<h2 class="text-center mb-5">Nuestros Servicios</h2>
-<div id="listaServicios" class="row g-4">
-<!-- Renderizado dinámicamente desde script.js -->
-</div>
+
+    <h2 class="text-center mb-5">
+        Nuestros Servicios
+    </h2>
+
+    <div id="listaServicios" class="row g-4">
+
+    </div>
+
 </section>
+
 
 <section id="contacto" class="py-5">
-<h2 class="text-center mb-5">Contacto</h2>
 
-<div class="row g-4">
-<div class="col-lg-6">
-<form id="formulario" novalidate>
+    <h2 class="text-center mb-5">
+        Contacto
+    </h2>
 
-<div class="mb-3">
-<label for="nombre" class="form-label">Nombre o Título</label>
-<input type="text" id="nombre" class="form-control">
-<small id="errorNombre" class="text-danger"></small>
-</div>
+    <div class="row g-4">
 
-<div class="mb-3">
-<label for="correo" class="form-label">Correo Electrónico</label>
-<input type="email" id="correo" class="form-control">
-<small id="errorCorreo" class="text-danger"></small>
-</div>
+        <div class="col-lg-6">
 
-<div class="mb-3">
-<label for="categoria" class="form-label">Categoría</label>
-<select id="categoria" class="form-select">
-<option value="">Seleccione una categoría</option>
-<option value="Diseño Web">Diseño Web</option>
-<option value="Aplicaciones Web">Aplicaciones Web</option>
-<option value="Soporte Técnico">Soporte Técnico</option>
-</select>
-<small id="errorCategoria" class="text-danger"></small>
-</div>
+            <form id="formulario" novalidate>
 
-<div class="mb-3">
-<label for="descripcion" class="form-label">Descripción</label>
-<textarea id="descripcion" rows="5" class="form-control"></textarea>
-<small id="errorDescripcion" class="text-danger"></small>
-</div>
+                <div class="mb-3">
 
-<button class="btn btn-success w-100" type="submit">Registrar Información</button>
-</form>
+                    <label for="nombre" class="form-label">
+                        Nombre o Título
+                    </label>
 
-<div id="mensajeGeneral" class="mt-4"></div>
+                    <input
+                        type="text"
+                        id="nombre"
+                        class="form-control">
 
-</div>
+                    <small
+                        id="errorNombre"
+                        class="text-danger">
+                    </small>
 
-<div class="col-lg-6">
-<h4>Información de Contacto</h4>
-<p>📧 contacto@desarrolloweb.com</p>
-<p>📞 +593 999 999 999</p>
-<p>📍 Guayaquil, Ecuador</p>
-</div>
-</div>
+                </div>
 
-<hr class="my-5">
 
-<h3 class="text-center">Registros Realizados</h3>
-<p class="text-center">Total de registros: <strong id="contador">0</strong></p>
-<div id="listaRegistros" class="row g-3"></div>
+                <div class="mb-3">
+
+                    <label for="correo" class="form-label">
+                        Correo Electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        class="form-control">
+
+                    <small
+                        id="errorCorreo"
+                        class="text-danger">
+                    </small>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label for="categoria" class="form-label">
+                        Categoría
+                    </label>
+
+                    <select
+                        id="categoria"
+                        class="form-select">
+
+                        <option value="">
+                            Seleccione una categoría
+                        </option>
+
+                        <option value="Diseño Web">
+                            Diseño Web
+                        </option>
+
+                        <option value="Aplicaciones Web">
+                            Aplicaciones Web
+                        </option>
+
+                        <option value="Soporte Técnico">
+                            Soporte Técnico
+                        </option>
+
+                    </select>
+
+                    <small
+                        id="errorCategoria"
+                        class="text-danger">
+                    </small>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label for="descripcion" class="form-label">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        id="descripcion"
+                        rows="5"
+                        class="form-control">
+                    </textarea>
+
+                    <small
+                        id="errorDescripcion"
+                        class="text-danger">
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="btn btn-success w-100"
+                    type="submit">
+
+                    Registrar Información
+
+                </button>
+
+            </form>
+
+
+            <div id="mensajeGeneral" class="mt-4"></div>
+
+        </div>
+
+
+        <div class="col-lg-6">
+
+            <h4>
+                Información de Contacto
+            </h4>
+
+            <p>
+                📧 contacto@desarrolloweb.com
+            </p>
+
+            <p>
+                📞 +593 999 999 999
+            </p>
+
+            <p>
+                📍 Guayaquil, Ecuador
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <hr class="my-5">
+
+
+    <h3 class="text-center">
+        Registros Realizados
+    </h3>
+
+    <p class="text-center">
+
+        Total de registros:
+        <strong id="contador">0</strong>
+
+    </p>
+
+
+    <div
+        id="listaRegistros"
+        class="row g-3">
+    </div>
 
 </section>
 
+
 <aside class="mt-5">
-<h3>Información Adicional</h3>
-<p>Proyecto preparado para una futura migración a Flask utilizando una plantilla base.</p>
+
+    <h3>
+        Información Adicional
+    </h3>
+
+    <p>
+        Proyecto desarrollado con HTML5, CSS3,
+        Bootstrap, JavaScript, Python, Flask y Jinja2.
+    </p>
+
 </aside>
 
-</main>
 
-<!-- ========================= -->
-<!-- MODAL BOOTSTRAP -->
-<!-- ========================= -->
-<div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
+<!-- MODAL -->
+
+<div
+    class="modal fade"
+    id="modalRegistro"
+    tabindex="-1"
+    aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered">
 
@@ -154,21 +271,25 @@
                 <button
                     type="button"
                     class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"
-                    aria-label="Cerrar">
+                    data-bs-dismiss="modal">
                 </button>
 
             </div>
 
+
             <div class="modal-body text-center">
 
-                <h4 class="mb-3">¡Información registrada!</h4>
+                <h4 class="mb-3">
+                    ¡Información registrada!
+                </h4>
 
                 <p>
-                    El registro se ha guardado correctamente en el sistema.
+                    El registro se ha guardado correctamente
+                    en el sistema.
                 </p>
 
             </div>
+
 
             <div class="modal-footer">
 
@@ -189,14 +310,4 @@
 
 </div>
 
-<footer class="text-center p-4">
-Esther Sellán Barahona<br>
-Desarrollo de Aplicaciones Web<br>
-Proyecto Integrador - Semana 7 | 2026
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-
-</body>
-</html>
+{% endblock %}
