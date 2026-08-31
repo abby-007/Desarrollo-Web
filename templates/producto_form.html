@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo producto</title>
+</head>
+<body>
+
+    <h1>Registrar nuevo producto</h1>
+
+    <form method="POST">
+
+        {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.nombre.label }}
+            {{ form.nombre() }}
+
+            {% for error in form.nombre.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.categoria.label }}
+            {{ form.categoria() }}
+
+            {% for error in form.categoria.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.precio.label }}
+            {{ form.precio() }}
+
+            {% for error in form.precio.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <br>
+
+        <div>
+            {{ form.stock.label }}
+            {{ form.stock() }}
+
+            {% for error in form.stock.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <br>
+
+        {{ form.submit() }}
+
+    </form>
+
+</body>
+</html>

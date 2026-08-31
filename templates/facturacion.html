@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+Facturación - Desarrollo Web
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+
+    <h2 class="text-center mb-5">
+        Módulo de Facturación
+    </h2>
+
+
+    <div class="card p-4">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h4>
+                    Factura de ejemplo
+                </h4>
+
+                <p>
+                    <strong>Número:</strong>
+                    FAC-001
+                </p>
+
+                <p>
+                    <strong>Cliente:</strong>
+                    María Torres
+                </p>
+
+                <p>
+                    <strong>Servicio:</strong>
+                    Desarrollo Web
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <h4>
+                    Detalle
+                </h4>
+
+                <p>
+                    <strong>Subtotal:</strong>
+                    $350.00
+                </p>
+
+                <p>
+                    <strong>IVA:</strong>
+                    $52.50
+                </p>
+
+                <hr>
+
+                <h5>
+                    Total: $402.50
+                </h5>
+
+                <span class="badge bg-success">
+                    Pagado
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
