@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}
+Nuevo cliente
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        Registrar nuevo cliente
+    </h2>
+
+    <form method="POST">
+
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            {{ form.nombre.label(class="form-label") }}
+            {{ form.nombre(class="form-control") }}
+
+            {% for error in form.nombre.errors %}
+                <div class="text-danger">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="mb-3">
+            {{ form.empresa.label(class="form-label") }}
+            {{ form.empresa(class="form-control") }}
+
+            {% for error in form.empresa.errors %}
+                <div class="text-danger">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="mb-3">
+            {{ form.ciudad.label(class="form-label") }}
+            {{ form.ciudad(class="form-control") }}
+
+            {% for error in form.ciudad.errors %}
+                <div class="text-danger">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="mb-3">
+            {{ form.estado.label(class="form-label") }}
+            {{ form.estado(class="form-select") }}
+
+            {% for error in form.estado.errors %}
+                <div class="text-danger">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </div>
+
+
+        {{ form.submit(class="btn btn-primary") }}
+
+        <a href="{{ url_for('clientes') }}" class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+{% endblock %}

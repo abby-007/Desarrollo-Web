@@ -1,64 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Nuevo producto</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <h1>Registrar nuevo producto</h1>
+{% block title %}Productos{% endblock %}
 
-    <form method="POST">
+{% block content %}
 
-        {{ form.hidden_tag() }}
+<div class="container mt-4">
 
-        <div>
-            {{ form.nombre.label }}
-            {{ form.nombre() }}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Módulo de Productos</h2>
 
-            {% for error in form.nombre.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
-        </div>
+        <a href="{{ url_for('nuevo_producto') }}" class="btn btn-primary">
+            Nuevo producto
+        </a>
+    </div>
 
-        <br>
+    <div class="table-responsive">
 
-        <div>
-            {{ form.categoria.label }}
-            {{ form.categoria() }}
+        <table class="table table-bordered table-striped">
 
-            {% for error in form.categoria.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
-        </div>
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
 
-        <br>
+            <tbody>
 
-        <div>
-            {{ form.precio.label }}
-            {{ form.precio() }}
+                {% for producto in productos %}
 
-            {% for error in form.precio.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
-        </div>
+                <tr>
+                    <td>{{ producto["id"] }}</td>
+                    <td>{{ producto["nombre"] }}</td>
+                    <td>{{ producto["categoria"] }}</td>
+                    <td>${{ "%.2f"|format(producto["precio"]) }}</td>
+                    <td>{{ producto["stock"] }}</td>
+                </tr>
 
-        <br>
+                {% else %}
 
-        <div>
-            {{ form.stock.label }}
-            {{ form.stock() }}
+                <tr>
+                    <td colspan="5" class="text-center">
+                        No existen productos registrados.
+                    </td>
+                </tr>
 
-            {% for error in form.stock.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
-        </div>
+                {% endfor %}
 
-        <br>
+            </tbody>
 
-        {{ form.submit() }}
+        </table>
 
-    </form>
+    </div>
 
-</body>
-</html>
+</div>
+
+{% endblock %}

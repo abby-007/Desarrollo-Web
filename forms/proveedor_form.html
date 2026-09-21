@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Clientes - Desarrollo Web
+Proveedores - Desarrollo Web
 {% endblock %}
 
 {% block content %}
@@ -11,11 +11,12 @@ Clientes - Desarrollo Web
     <div class="d-flex justify-content-between align-items-center mb-5">
 
         <h2>
-            Módulo de Clientes
+            Módulo de Proveedores
         </h2>
 
-        <a href="{{ url_for('nuevo_cliente') }}" class="btn btn-primary">
-            Nuevo cliente
+        <a href="{{ url_for('nuevo_proveedor') }}"
+           class="btn btn-primary">
+            Nuevo proveedor
         </a>
 
     </div>
@@ -29,9 +30,10 @@ Clientes - Desarrollo Web
 
                 <tr>
                     <th>#</th>
-                    <th>Cliente</th>
+                    <th>Contacto</th>
                     <th>Empresa</th>
                     <th>Ciudad</th>
+                    <th>Teléfono</th>
                     <th>Estado</th>
                 </tr>
 
@@ -40,29 +42,33 @@ Clientes - Desarrollo Web
 
             <tbody>
 
-                {% for cliente in clientes %}
+                {% for proveedor in proveedores %}
 
                 <tr>
 
                     <td>
-                        {{ cliente["id"] }}
+                        {{ proveedor["id"] }}
                     </td>
 
                     <td>
-                        {{ cliente["nombre"] }}
+                        {{ proveedor["nombre"] }}
                     </td>
 
                     <td>
-                        {{ cliente["empresa"] }}
+                        {{ proveedor["empresa"] }}
                     </td>
 
                     <td>
-                        {{ cliente["ciudad"] }}
+                        {{ proveedor["ciudad"] }}
+                    </td>
+
+                    <td>
+                        {{ proveedor["telefono"] }}
                     </td>
 
                     <td>
 
-                        {% if cliente["estado"] == "Activo" %}
+                        {% if proveedor["estado"] == "Activo" %}
 
                             <span class="badge bg-success">
                                 Activo
@@ -84,8 +90,8 @@ Clientes - Desarrollo Web
 
                 <tr>
 
-                    <td colspan="5" class="text-center">
-                        No existen clientes registrados.
+                    <td colspan="6" class="text-center">
+                        No existen proveedores registrados.
                     </td>
 
                 </tr>

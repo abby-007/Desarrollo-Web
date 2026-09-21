@@ -8,100 +8,119 @@ Proveedores - Desarrollo Web
 
 <section class="py-5">
 
-    <h2 class="text-center mb-5">
-        Módulo de Proveedores
-    </h2>
+    <div class="container">
 
-    <div class="row g-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
 
-        <div class="col-md-6">
+            <h2>Módulo de Proveedores</h2>
 
-            <div class="card p-4">
-
-                <h4 class="text-primary">
-                    Bootstrap
-                </h4>
-
-                <p>
-                    Framework utilizado para crear
-                    una interfaz responsive.
-                </p>
-
-                <p>
-                    <strong>Servicio:</strong>
-                    Framework CSS
-                </p>
-
-            </div>
+            <a href="{{ url_for('nuevo_proveedor') }}"
+               class="btn btn-primary">
+                Nuevo proveedor
+            </a>
 
         </div>
 
+        <div class="table-responsive">
 
-        <div class="col-md-6">
+            <table class="table table-striped table-hover">
 
-            <div class="card p-4">
+                <thead class="table-dark">
 
-                <h4 class="text-primary">
-                    Unsplash
-                </h4>
+                    <tr>
+                        <th>#</th>
+                        <th>Contacto</th>
+                        <th>Empresa</th>
+                        <th>Ciudad</th>
+                        <th>Teléfono</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
 
-                <p>
-                    Plataforma utilizada para obtener
-                    imágenes para el proyecto.
-                </p>
+                </thead>
 
-                <p>
-                    <strong>Servicio:</strong>
-                    Recursos gráficos
-                </p>
+                <tbody>
 
-            </div>
+                    {% for proveedor in proveedores %}
 
-        </div>
+                    <tr>
 
+                        <td>
+                            {{ proveedor["id"] }}
+                        </td>
 
-        <div class="col-md-6">
+                        <td>
+                            {{ proveedor["nombre"] }}
+                        </td>
 
-            <div class="card p-4">
+                        <td>
+                            {{ proveedor["empresa"] }}
+                        </td>
 
-                <h4 class="text-primary">
-                    JSDelivr
-                </h4>
+                        <td>
+                            {{ proveedor["ciudad"] }}
+                        </td>
 
-                <p>
-                    CDN utilizado para cargar
-                    Bootstrap.
-                </p>
+                        <td>
+                            {{ proveedor["telefono"] }}
+                        </td>
 
-                <p>
-                    <strong>Servicio:</strong>
-                    Distribución de recursos
-                </p>
+                        <td>
 
-            </div>
+                            {% if proveedor["estado"] == "Activo" %}
 
-        </div>
+                                <span class="badge bg-success">
+                                    Activo
+                                </span>
 
+                            {% else %}
 
-        <div class="col-md-6">
+                                <span class="badge bg-warning text-dark">
+                                    Pendiente
+                                </span>
 
-            <div class="card p-4">
+                            {% endif %}
 
-                <h4 class="text-primary">
-                    Flask
-                </h4>
+                        </td>
 
-                <p>
-                    Framework utilizado para desarrollar
-                    el backend de la aplicación.
-                </p>
+                        <td>
 
-                <p>
-                    <strong>Servicio:</strong>
-                    Framework Python
-                </p>
+                            <a href="{{ url_for('editar_proveedor', id=proveedor['id']) }}"
+                               class="btn btn-sm btn-warning">
+                                Editar
+                            </a>
 
-            </div>
+                            <form action="{{ url_for('eliminar_proveedor', id=proveedor['id']) }}"
+                                  method="POST"
+                                  style="display: inline;">
+
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger"
+                                        onclick="return confirm('¿Está seguro de eliminar este proveedor?');">
+                                    Eliminar
+                                </button>
+
+                            </form>
+
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+
+                        <td colspan="7" class="text-center">
+                            No existen proveedores registrados.
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
 
         </div>
 
