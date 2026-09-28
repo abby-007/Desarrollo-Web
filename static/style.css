@@ -1,0 +1,258 @@
+/* ========================================= */
+/* ESTILOS GENERALES */
+/* ========================================= */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* ========================================= */
+/* HEADER Y NAVEGACIÓN */
+/* ========================================= */
+header {
+    background: linear-gradient(to right, #0d6efd, #0a58ca);
+    color: white;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-weight: bold;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ========================================= */
+/* SECCIONES Y TÍTULOS */
+/* ========================================= */
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    font-weight: bold;
+    color: #0d6efd;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* ========================================= */
+/* TARJETAS DE SERVICIOS (Renderizadas dinámicamente) */
+/* ========================================= */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card .fs-1 {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .fs-1 {
+    transform: scale(1.1);
+}
+
+/* ========================================= */
+/* FORMULARIO DE CONTACTO */
+/* ========================================= */
+form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-control,
+.form-select {
+    margin-bottom: 5px;
+    border-radius: 6px;
+}
+
+/* Espacio reservado fijo para evitar saltos bruscos cuando aparecen los errores */
+small {
+    display: block;
+    min-height: 20px;
+    font-size: 0.85rem;
+}
+
+/* ========================================= */
+/* SECCIÓN DE REGISTROS DINÁMICOS */
+/* ========================================= */
+.registro {
+    border-left: 5px solid #0d6efd;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    height: 100%; /* Asegura que si hay varios se alineen bien en altura */
+}
+
+.registro h5 {
+    color: #0d6efd;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.registro p {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+/* ========================================= */
+/* SECCIÓN ADICIONAL (ASIDE) */
+/* ========================================= */
+aside {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #6c757d;
+}
+
+/* ========================================= */
+/* PIE DE PÁGINA (FOOTER) */
+/* ========================================= */
+footer {
+    background-color: #212529;
+    color: #a8aeb4;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ========================================= */
+/* RESPONSIVE / ADAPTABILIDAD */
+/* ========================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+    
+    .registro, form, aside {
+        padding: 15px;
+    }
+}
+
+
+/* ========================================= */
+/* MEJORAS VISUALES - SEMANA 8 */
+/* ========================================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(180deg,#f8f9fa,#eef3f8);
+}
+
+/* NAVBAR */
+
+.navbar{
+    transition:all .3s ease;
+}
+
+.navbar-brand{
+    font-weight:bold;
+    font-size:1.5rem;
+}
+
+.nav-link{
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#ffc107 !important;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0d6efd,#4f8dfd);
+}
+
+header .btn{
+    transition:.3s;
+}
+
+header .btn:hover{
+    transform:scale(1.05);
+}
+
+/* TARJETAS */
+
+.card{
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* FORMULARIOS */
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus{
+
+    box-shadow:0 0 15px rgba(13,110,253,.30);
+    border-color:#0d6efd;
+
+}
+
+/* BOTONES */
+
+.btn{
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* REGISTROS */
+
+.registro{
+    transition:.3s;
+}
+
+.registro:hover{
+    transform:scale(1.02);
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+}
+
+/* MODAL */
+
+.modal-content{
+    border-radius:15px;
+}
+
+/* SPINNER */
+
+#spinnerCarga{
+    backdrop-filter:blur(2px);
+}

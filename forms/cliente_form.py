@@ -8,36 +8,24 @@ class ClienteForm(FlaskForm):
     nombre = StringField(
         "Nombre del cliente",
         validators=[
-            DataRequired(message="El nombre es obligatorio."),
-            Length(
-                min=3,
-                max=100,
-                message="El nombre debe tener entre 3 y 100 caracteres."
-            )
+            DataRequired(),
+            Length(min=3, max=100)
         ]
     )
 
     empresa = StringField(
         "Empresa",
         validators=[
-            DataRequired(message="La empresa es obligatoria."),
-            Length(
-                min=2,
-                max=100,
-                message="La empresa debe tener entre 2 y 100 caracteres."
-            )
+            DataRequired(),
+            Length(min=2, max=100)
         ]
     )
 
     ciudad = StringField(
         "Ciudad",
         validators=[
-            DataRequired(message="La ciudad es obligatoria."),
-            Length(
-                min=2,
-                max=50,
-                message="La ciudad debe tener entre 2 y 50 caracteres."
-            )
+            DataRequired(),
+            Length(min=2, max=50)
         ]
     )
 
@@ -47,9 +35,7 @@ class ClienteForm(FlaskForm):
             ("Activo", "Activo"),
             ("Pendiente", "Pendiente")
         ],
-        validators=[
-            DataRequired(message="El estado es obligatorio.")
-        ]
+        validators=[DataRequired()]
     )
 
     submit = SubmitField("Guardar cliente")
