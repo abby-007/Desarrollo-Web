@@ -1,134 +1,131 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <title>
-        {% if cliente %}
-            Editar cliente
-        {% else %}
-            Nuevo cliente
-        {% endif %}
-    </title>
+{% block title %}
+{{ titulo }}
+{% endblock %}
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-</head>
+{% block content %}
 
-<body>
+<div class="row justify-content-center">
 
-<nav class="navbar navbar-dark bg-dark">
+    <div class="col-md-8">
 
-    <div class="container">
+        <div class="card shadow-sm">
 
-        <a class="navbar-brand" href="{{ url_for('index') }}">
-            Sistema de Ferretería
-        </a>
+            <div class="card-header bg-primary text-white">
 
-        <div>
+                <h3 class="mb-0">
+                    {{ titulo }}
+                </h3>
 
-            <a href="{{ url_for('index') }}" class="btn btn-outline-light btn-sm me-2">
-                Inicio
-            </a>
+            </div>
 
-            <a href="{{ url_for('clientes') }}" class="btn btn-outline-light btn-sm me-2">
-                Clientes
-            </a>
 
-            <a href="{{ url_for('logout') }}" class="btn btn-outline-danger btn-sm">
-                Cerrar sesión
-            </a>
+            <div class="card-body">
 
-        </div>
+                <form method="POST">
 
-    </div>
+                    {{ form.hidden_tag() }}
 
-</nav>
 
-<div class="container mt-5">
+                    <div class="mb-3">
 
-    <div class="card shadow-sm">
+                        {{ form.nombre.label(
+                            class="form-label fw-bold"
+                        ) }}
 
-        <div class="card-header bg-warning">
+                        {{ form.nombre(
+                            class="form-control"
+                        ) }}
 
-            <h3 class="mb-0">
+                        {% for error in form.nombre.errors %}
 
-                {% if cliente %}
-                    Editar cliente
-                {% else %}
-                    Nuevo cliente
-                {% endif %}
+                            <div class="text-danger">
+                                {{ error }}
+                            </div>
 
-            </h3>
+                        {% endfor %}
 
-        </div>
+                    </div>
 
-        <div class="card-body">
 
-            <form method="POST">
+                    <div class="mb-3">
 
-                {{ form.hidden_tag() }}
+                        {{ form.empresa.label(
+                            class="form-label fw-bold"
+                        ) }}
 
-                <div class="mb-3">
+                        {{ form.empresa(
+                            class="form-control"
+                        ) }}
 
-                    {{ form.nombre.label(class="form-label") }}
+                        {% for error in form.empresa.errors %}
 
-                    {{ form.nombre(class="form-control") }}
+                            <div class="text-danger">
+                                {{ error }}
+                            </div>
 
-                    {% for error in form.nombre.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
+                        {% endfor %}
 
-                </div>
+                    </div>
 
-                <div class="mb-3">
 
-                    {{ form.empresa.label(class="form-label") }}
+                    <div class="mb-3">
 
-                    {{ form.empresa(class="form-control") }}
+                        {{ form.ciudad.label(
+                            class="form-label fw-bold"
+                        ) }}
 
-                    {% for error in form.empresa.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
+                        {{ form.ciudad(
+                            class="form-control"
+                        ) }}
 
-                </div>
+                        {% for error in form.ciudad.errors %}
 
-                <div class="mb-3">
+                            <div class="text-danger">
+                                {{ error }}
+                            </div>
 
-                    {{ form.ciudad.label(class="form-label") }}
+                        {% endfor %}
 
-                    {{ form.ciudad(class="form-control") }}
+                    </div>
 
-                    {% for error in form.ciudad.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
 
-                </div>
+                    <div class="mb-3">
 
-                <div class="mb-3">
+                        {{ form.estado.label(
+                            class="form-label fw-bold"
+                        ) }}
 
-                    {{ form.estado.label(class="form-label") }}
+                        {{ form.estado(
+                            class="form-control"
+                        ) }}
 
-                    {{ form.estado(class="form-control") }}
+                        {% for error in form.estado.errors %}
 
-                    {% for error in form.estado.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
+                            <div class="text-danger">
+                                {{ error }}
+                            </div>
 
-                </div>
+                        {% endfor %}
 
-                <button type="submit" class="btn btn-success">
-                    Guardar
-                </button>
+                    </div>
 
-                <a href="{{ url_for('clientes') }}" class="btn btn-secondary">
-                    Cancelar
-                </a>
 
-            </form>
+                    {{ form.submit(
+                        class="btn btn-primary"
+                    ) }}
+
+                    <a
+                        href="{{ url_for('clientes') }}"
+                        class="btn btn-secondary"
+                    >
+                        Cancelar
+                    </a>
+
+                </form>
+
+            </div>
 
         </div>
 
@@ -136,5 +133,4 @@
 
 </div>
 
-</body>
-</html>
+{% endblock %}

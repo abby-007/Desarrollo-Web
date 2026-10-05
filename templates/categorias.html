@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Categorías{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+```
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2>Gestión de Categorías</h2>
+        <p class="text-muted">Administración de las categorías del sistema</p>
+    </div>
+
+    <a href="{{ url_for('nueva_categoria') }}" class="btn btn-primary">
+        + Nueva Categoría
+    </a>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        {% if categorias %}
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for categoria in categorias %}
+
+                    <tr>
+                        <td>{{ categoria.id }}</td>
+                        <td>{{ categoria.nombre }}</td>
+                        <td>{{ categoria.descripcion or '' }}</td>
+
+                        <td class="text-center">
+
+                            <a href="{{ url_for('editar_categoria', id=categoria.id) }}"
+                               class="btn btn-warning btn-sm">
+                                Editar
+                            </a>
+
+                            <form action="{{ url_for('eliminar_categoria', id=categoria.id) }}"
+                                  method="POST"
+                                  style="display:inline;"
+                                  onsubmit="return confirm('¿Está seguro de eliminar esta categoría?');">
+
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    Eliminar
+                                </button>
+
+                            </form>
+
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-info text-center">
+            No existen categorías registradas.
+        </div>
+
+        {% endif %}
+
+    </div>
+</div>
+```
+
+</div>
+
+{% endblock %}
